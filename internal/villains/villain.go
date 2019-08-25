@@ -9,6 +9,9 @@ type Villain interface {
 	IsTough() bool
 	ApplyTough()
 	ClearTough()
+	IsConfused()
+	ApplyConfused()
+	ClearConfused()
 	ApplyDamage(amount int)
 	ApplyHealing(amount int)
 	GetMaxHitPoints() int
@@ -22,6 +25,7 @@ type VillainStats struct {
 	currentHitPoints int
 	stunned          bool
 	tough            bool
+	confused         bool
 	attack           int
 	scheme           int
 }
@@ -38,6 +42,7 @@ func NewVillain(p *VillainParams) *VillainStats {
 		currentHitPoints: p.MaxHitPoints,
 		stunned:          false,
 		tough:            false,
+		confused:         false,
 		attack:           p.Attack,
 		scheme:           p.Scheme,
 	}
@@ -53,6 +58,18 @@ func (v *VillainStats) ApplyStun() {
 
 func (v *VillainStats) ClearStun() {
 	v.stunned = false
+}
+
+func (v *VillainStats) IsConfused() bool {
+	return v.confused
+}
+
+func (v *VillainStats) ApplyConfused() {
+	v.confused = true
+}
+
+func (v *VillainStats) ClearConfused() {
+	v.confused = false
 }
 
 func (v *VillainStats) IsTough() bool {

@@ -103,6 +103,23 @@ func TestVillainStats_StunGetterSetter(t *testing.T) {
 	}
 }
 
+func TestVillainStats_ConfusedGetterSetter(t *testing.T) {
+	v := createTestVillain()
+	if v.IsConfused() {
+		t.Error("IsStunned should return if the villain is stunned.  Expected: false, got: true")
+	}
+
+	v.ApplyConfused()
+	if !v.IsConfused() {
+		t.Errorf("ApplyStun should set isStunned to true. Expected: true, got: false")
+	}
+
+	v.ClearConfused()
+	if v.IsConfused() {
+		t.Errorf("ClearStun should set isStunned to false.  Expected: false, got: true")
+	}
+}
+
 func TestVillainStats_ToughGetterSetter(t *testing.T) {
 	v := createTestVillain()
 	if v.IsTough() {
