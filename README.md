@@ -1,4 +1,4 @@
-# marvel_server
+# Marvel Server
 
 This is the API for running a certain marvel card game
 
