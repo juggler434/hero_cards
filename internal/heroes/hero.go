@@ -1,5 +1,6 @@
 package heroes
 
+//Hero represents the hero side of an identity
 type Hero interface {
 	GetAttack() int
 	GetThwart() int
@@ -7,6 +8,7 @@ type Hero interface {
 	GetHandSize() int
 }
 
+//HeroStats represents the stats for a base hero
 type HeroStats struct {
 	attack   int
 	thwart   int
@@ -14,6 +16,7 @@ type HeroStats struct {
 	handSize int
 }
 
+//HeroParams are the statistics needed to initialize a new hero
 type HeroParams struct {
 	Attack   int
 	Thwart   int
@@ -21,6 +24,7 @@ type HeroParams struct {
 	HandSize int
 }
 
+//NewHeroStats is the initializer for Hero
 func NewHeroStats(p *HeroParams) *HeroStats {
 	return &HeroStats{
 		p.Attack,
@@ -30,18 +34,22 @@ func NewHeroStats(p *HeroParams) *HeroStats {
 	}
 }
 
+//GetAttack is the reader for a heroes attack
 func (h *HeroStats) GetAttack() int {
 	return h.attack
 }
 
+//GetDefense is the reader for a heroes defense
 func (h *HeroStats) GetDefense() int {
 	return h.defense
 }
 
+//GetThwart is the reader for a heroes thwart
 func (h *HeroStats) GetThwart() int {
 	return h.thwart
 }
 
+//GetHandSize is the reader for a heroes hand size
 func (h *HeroStats) GetHandSize() int {
 	return h.handSize
 }
