@@ -2,19 +2,21 @@ package cmd
 
 import (
 	"fmt"
-	"github.com/spf13/cobra"
 	"os"
+
+	"github.com/spf13/cobra"
 )
 
 var rootCmd = cobra.Command{
-	Use: "marvel",
+	Use:   "marvel",
 	Short: "CLI commands for Marvel LCG server",
-	Long: "",
-	Run: func(cmd *cobra.Command, args []string)  {
+	Long:  "",
+	Run: func(cmd *cobra.Command, args []string) {
 		// The root command
 	},
 }
 
+//Execute runs the root command for the CLI
 func Execute() {
 	if err := rootCmd.Execute(); err != nil {
 		fmt.Println(err)
