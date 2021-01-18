@@ -48,13 +48,13 @@ func getTestBaseIdentity() *identity.BaseIdentity {
 	var testAlterEgo alts.AlterEgo
 	testAlterEgo = getTestAlterEgo()
 
-	p := identity.IdentityParams{
+	p := identity.NewBaseIdentityParams{
 		MaxHitPoints: TestMaxHitPoints,
 		Hero:         testHero,
 		AlterEgo:     testAlterEgo,
 	}
 
-	return identity.NewBaseIdenetity(&p)
+	return identity.NewBaseIdentity(&p)
 }
 
 func TestBaseIdentity_ConfusedGetterSetters(t *testing.T) {
