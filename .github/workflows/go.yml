@@ -20,14 +20,17 @@ jobs:
 
     - name: Build
       run: go build -v ./...
+    
+    - name: Install golint
+      run: go get -u golang.org/x/lint/golint
+    
+    - name: Lint
+      run: golint ./...
       
     - name: Format
       env: 
         GO111MODULE: off
-      run: 
-        go get -u golang.org/x/lint/golint
-        golint ./...
-        if [ "$(gofmt -s -l . | wc -l)" -gt 0 ]; then exit 1; fi
+      run: if [ "$(gofmt -s -l . | wc -l)" -gt 0 ]; then exit 1; fi
 
     - name: Test
       run: go test -v -coverprofile=coverage.out ./... 
