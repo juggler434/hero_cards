@@ -46,15 +46,15 @@ type BaseIdentity struct {
 	isHero           bool
 }
 
-//IdentityParams is the parameters needed to initialize a new Identity
-type IdentityParams struct {
+//NewBaseIdentityParams is the parameters needed to initialize a new Identity
+type NewBaseIdentityParams struct {
 	MaxHitPoints int
 	Hero         heroes.Hero
 	AlterEgo     alts.AlterEgo
 }
 
 //NewBaseIdentity is the initializer for identity
-func NewBaseIdenetity(p *IdentityParams) *BaseIdentity {
+func NewBaseIdentity(p *NewBaseIdentityParams) *BaseIdentity {
 	return &BaseIdentity{
 		maxHitPoints:     p.MaxHitPoints,
 		currentHitPoints: p.MaxHitPoints,
