@@ -3,12 +3,16 @@
 This is the API for running a certain marvel card game
 
 ## Setup
-TODO: Write this section
+`go build` will create a binary for marvelServer that can be run like any other binary.  There are currently no commands to be run.
 
 ## Development
 
 ### Testing
 To run tests, from project directory run `go test -v ./...`
+All tests must pass before a pull request will be merged
+
+### Formatting
+All code must conform to gofmt and golint
 
 ## Contributing 
 Commit message must have a detailed explanation of what the commit contains
