@@ -1,3 +1,8 @@
+![GitHub Workflow Status](https://img.shields.io/github/workflow/status/juggler434/marvel_server/Go)
+[![Coverage Status](https://coveralls.io/repos/github/juggler434/marvel_server/badge.svg?branch=development)](https://coveralls.io/github/juggler434/marvel_server?branch=development)
+[![Go Report Card](https://goreportcard.com/badge/github.com/juggler434/marvel_server)](https://goreportcard.com/report/github.com/juggler434/marvel_server)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 # Marvel Server
 
 This is the API for running a certain marvel card game
