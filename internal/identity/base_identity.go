@@ -133,7 +133,7 @@ func (b *BaseIdentity) ClearTough() {
 	b.tough = false
 }
 
-//IsHeroForm return true if an identity is currenty on it's hero side
+//IsHeroForm return true if an identity is currently on it's hero side
 func (b *BaseIdentity) IsHeroForm() bool {
 	return b.isHero
 }
