@@ -1,7 +1,7 @@
 package cmd
 
 import (
-	"github.com/juggler434/marvelServer/internal/login"
+	"github.com/juggler434/marvelServer/login/handlers"
 	"github.com/spf13/cobra"
 )
 
@@ -13,10 +13,10 @@ func init() {
 }
 
 var startLoginServer = cobra.Command{
-	Use:   "login",
+	Use:   "start",
 	Short: "starts login server",
 	Long:  "",
 	Run: func(cmd *cobra.Command, args []string) {
-		login.Start(port)
+		handlers.Start(port)
 	},
 }
