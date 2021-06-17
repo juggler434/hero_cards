@@ -7,22 +7,22 @@ import (
 )
 
 type UserRepository interface {
-	GetUser(username string) (models.User, error)
+	GetUser(username string) (*models.User, error)
 	CreateUser(username, email, password string) error
 	UpdateUser(username, email, password string) error
 	DeleteUser(username string) error
 }
 
 type userRepository struct {
-	db sql.DB
+	db *sql.DB
 }
 
-func (u *userRepository) GetUser(username string) (models.User, error) {
+func (u *userRepository) GetUser(username string) (*models.User, error) {
 	panic("implement me")
 }
 
 func (u *userRepository) CreateUser(username, email, password string) error {
-	panic("implement me")
+	return nil
 }
 
 func (u *userRepository) UpdateUser(username, email, password string) error {
@@ -34,6 +34,6 @@ func (u *userRepository) DeleteUser(username string) error {
 }
 
 // NewUserRepository returns an instance of UserRepository
-func NewUserRepository(db sql.DB) *userRepository {
+func NewUserRepository(db *sql.DB) *userRepository {
 	return &userRepository{db: db}
 }

@@ -3,7 +3,7 @@ module github.com/juggler434/marvelServer
 go 1.12
 
 require (
-	github.com/DATA-DOG/go-sqlmock v1.5.0 // indirect
+	github.com/DATA-DOG/go-sqlmock v1.5.0
 	github.com/armon/consul-api v0.0.0-20180202201655-eb2c6b5be1b6 // indirect
 	github.com/google/uuid v1.2.0
 	github.com/gorilla/mux v1.8.0
