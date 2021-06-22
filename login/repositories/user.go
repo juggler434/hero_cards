@@ -1,6 +1,7 @@
 package repositories
 
 import (
+	"context"
 	"database/sql"
 
 	"github.com/juggler434/marvelServer/login/models"
@@ -21,8 +22,24 @@ func (u *userRepository) GetUser(username string) (*models.User, error) {
 	panic("implement me")
 }
 
-func (u *userRepository) CreateUser(username, email, password string) error {
-	return nil
+func (u *userRepository) CreateUser(ctx context.Context, username, email, password string) error {
+	user, err := models.NewUser(email, username, password)
+	if err != nil {
+		return err
+	}
+
+	tx, err := u.db.BeginTx(ctx, &sql.TxOptions{})
+	if err != nil {
+		return err
+	}
+	defer tx.Rollback()
+
+	_, err = tx.Exec("INSERT INTO users (id, email, username, password) VALUES ($1, $2, $3, $4)", user.ID(), user.Email(), user.Username(), user.Password())
+	if err != nil {
+		return err
+	}
+	err = tx.Commit()
+	return err
 }
 
 func (u *userRepository) UpdateUser(username, email, password string) error {

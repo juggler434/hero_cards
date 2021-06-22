@@ -1,6 +1,8 @@
 package repositories
 
 import (
+	"context"
+	"errors"
 	"testing"
 
 	"github.com/DATA-DOG/go-sqlmock"
@@ -54,6 +56,21 @@ func Test_userRepository_CreateUser(t *testing.T) {
 				mock.ExpectExec("INSERT INTO users").WillReturnResult(sqlmock.NewResult(1, 1))
 				mock.ExpectCommit()
 			},
+			wantErr: false,
+		}, {
+			name: "non-unique email",
+			args: args{
+				username: "AmericasAss",
+				email:    "USARocks@test.com",
+				password: "password",
+			},
+			setupMockDb: func(mock sqlmock.Sqlmock) {
+				mock.ExpectBegin()
+
+				mock.ExpectExec("INSERT INTO users").WillReturnError(errors.New("email address taken"))
+				mock.ExpectRollback()
+			},
+			wantErr: true,
 		},
 	}
 	for _, tt := range tests {
@@ -70,7 +87,9 @@ func Test_userRepository_CreateUser(t *testing.T) {
 			u := &userRepository{
 				db: db,
 			}
-			if err := u.CreateUser(tt.args.username, tt.args.email, tt.args.password); (err != nil) != tt.wantErr {
+
+			ctx := context.Background()
+			if err := u.CreateUser(ctx, tt.args.username, tt.args.email, tt.args.password); (err != nil) != tt.wantErr {
 				t.Errorf("CreateUser() error = %v, wantErr %v", err, tt.wantErr)
 			}
 
