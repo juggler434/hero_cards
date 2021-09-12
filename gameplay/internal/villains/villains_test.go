@@ -3,7 +3,7 @@ package villains_test
 import (
 	"testing"
 
-	"github.com/juggler434/marvelServer/internal/villains"
+	"github.com/juggler434/marvelServer/gameplay/internal/villains"
 )
 
 const (

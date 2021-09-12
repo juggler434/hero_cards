@@ -1,8 +1,8 @@
 package identity
 
 import (
-	"github.com/juggler434/marvelServer/internal/alts"
-	"github.com/juggler434/marvelServer/internal/heroes"
+	"github.com/juggler434/marvelServer/gameplay/internal/alts"
+	"github.com/juggler434/marvelServer/gameplay/internal/heroes"
 	helpers "github.com/juggler434/marvelServer/pkg"
 )
 
