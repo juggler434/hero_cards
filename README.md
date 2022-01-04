@@ -7,6 +7,9 @@
 
 This is the API for running a certain comic themed card game
 
+## Requirements
+go 1.12
+
 ## Setup
 `go build` will create a binary for marvelServer that can be run like any other binary.  There are currently no commands to be run.
 
