@@ -3,9 +3,9 @@
 [![Go Report Card](https://goreportcard.com/badge/github.com/juggler434/marvel_server)](https://goreportcard.com/report/github.com/juggler434/marvel_server)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-# Marvel Server
+# Hero Cards
 
-This is the API for running a certain marvel card game
+This is the API for running a certain comic themed card game
 
 ## Setup
 `go build` will create a binary for marvelServer that can be run like any other binary.  There are currently no commands to be run.
