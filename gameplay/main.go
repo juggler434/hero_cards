@@ -1,4 +1,4 @@
-package gameplay
+package main
 
 import "github.com/juggler434/marvelServer/gameplay/cmd"
 
