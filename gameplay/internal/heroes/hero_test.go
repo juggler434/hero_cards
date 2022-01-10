@@ -3,7 +3,7 @@ package heroes_test
 import (
 	"testing"
 
-	"github.com/juggler434/marvelServer/gameplay/internal/heroes"
+	"github.com/juggler434/hero_cards/gameplay/internal/heroes"
 )
 
 const (
