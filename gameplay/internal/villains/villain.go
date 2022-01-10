@@ -1,6 +1,6 @@
 package villains
 
-import helpers "github.com/juggler434/marvelServer/pkg"
+import helpers "github.com/juggler434/hero_cards/pkg"
 
 //Villain represents a base villain
 type Villain interface {
