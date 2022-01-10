@@ -1,5 +1,5 @@
 package app
 
-func (s *server) routes() {
+func (s *Server) routes() {
 	s.router.HandleFunc("/health", s.handleHealth())
 }

@@ -1,9 +1,9 @@
 package identity
 
 import (
-	"github.com/juggler434/marvelServer/gameplay/internal/alts"
-	"github.com/juggler434/marvelServer/gameplay/internal/heroes"
-	helpers "github.com/juggler434/marvelServer/pkg"
+	"github.com/juggler434/hero_cards/gameplay/internal/alts"
+	"github.com/juggler434/hero_cards/gameplay/internal/heroes"
+	helpers "github.com/juggler434/hero_cards/pkg"
 )
 
 //Identity represents a hero/alter ego combo

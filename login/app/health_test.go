@@ -7,7 +7,7 @@ import (
 )
 
 func TestHandleHealth(t *testing.T) {
-	srv := server{
+	srv := Server{
 		router: http.DefaultServeMux,
 	}
 	srv.routes()
