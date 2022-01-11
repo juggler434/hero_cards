@@ -26,5 +26,6 @@ All code must conform to gofmt and golint
 Commit message must have a detailed explanation of what the commit contains
 Rebase master into personal branches to avoid merge commits
 
+Overviews of the project architecture can be found here: ![Overview](https://docs.google.com/document/d/1yaf_ku9EGThNiCmtpa-yEsJ5GniNtd-Z7RHLWqnkk6w/edit?usp=sharing)
 ### Test Coverage
 90% test coverage is required or justification on why that is not attainable
